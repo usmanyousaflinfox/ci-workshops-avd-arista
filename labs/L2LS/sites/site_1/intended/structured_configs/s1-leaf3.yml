@@ -3,6 +3,12 @@ aaa_authorization:
     default: local
 aaa_root:
   disabled: true
+banners:
+  motd: 'You shall not pass. Unless you are authorized by LINFOX. Then you shall pass.
+
+    EOF
+
+    '
 config_end: true
 daemon_terminattr:
   cvaddrs:
@@ -80,6 +86,15 @@ local_users:
   sha512_password: $6$arista$Blqf35RPti6M/z1cI21RWQFg0FRbnbeIWcMTMnk4sdIHHhKV.bJSk5YRJARggbmsC72fB92lWftrFV.PMGGOU.
   ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCv7hR2woAumc38nEbWxQx7Qq7nfkKA7tw/ZBNqjQusrdaF+LGk5CIG0SUvJvzibJvmXGrz23avGq8d4dlRYk6C99euOoItWdiqd9EhuXtWy4CszOfj7Hc/eJZgKguoOeQxMyGrEzQ850QiiReq/SrdttX8ClIFbAP0+JWoZEvXID34SM/XUxBIkEy0/w/V0CJODdyNJBM1o9uS3VN0AKbomNrBBEBXFzuC/eAjCLxtt3xSriA7FlASQUcWyy6w4LMvrk81ZqWdjfQKtNrErD3jjyZFhDaTmZQCgxqkVWZDrrk6V/1PIhoSfHepWK69PD7TR1RoHOoVTBJ4T8jZPgbt
     arista@melb-auto-workshop-17-2e419c35-eos
+logging:
+  vrfs:
+  - name: default
+    source_interface: Management0
+    hosts:
+    - name: 10.200.0.108
+      protocol: udp
+    - name: 10.200.1.108
+      protocol: udp
 management_api_http:
   enable_https: true
   enable_vrfs:
